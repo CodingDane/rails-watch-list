@@ -34,6 +34,6 @@ class BookmarksController < ApplicationController
   private
 
   def bookmark_params
-    params.require(:bookmark).permit(:comment, :movie_id)
+    params.require(:wa_li_bookmark).permit(:comment, :movie_id)
   end
 end
