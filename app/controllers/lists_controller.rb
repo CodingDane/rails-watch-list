@@ -11,6 +11,7 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(list_params)
+    @list.user = current_user
     if @list.save
       redirect_to lists_path
     else
@@ -25,6 +26,6 @@ class ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:wa_li_list).permit(:name, :photo)
+    params.require(:list).permit(:name, :photo)
   end
 end
