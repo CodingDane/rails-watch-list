@@ -10,9 +10,7 @@ class ListsController < ApplicationController
   end
 
   def create
-    raise
     @list = List.new(list_params)
-    raise
     if @list.save
       redirect_to lists_path
     else
