@@ -4,5 +4,5 @@ class Bookmark < ApplicationRecord
   belongs_to :list, foreign_key: "wa_li_list_id"
 
   validates :comment, presence: true, length: { minimum: 6 }
-  validates :movie, uniqueness: { scope: :wa_li_list }
+  validates :movie, uniqueness: { scope: :wa_li_list_id }
 end
